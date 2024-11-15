@@ -54,8 +54,7 @@ In combinatie met Federated Learning (FL) kan CB verebterd worden. In plaats van
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-%---------- Methodologie ------------------------------------------------------
-%// [ ] hoe wil ik DE en FL combineren 
+%---------- Methodologie ------------------------------------------------------ 
 %// [ ] tijdschatting gantt diagram opstellen, zie RM
 
 \section{Methodologie}%
@@ -63,25 +62,19 @@ In combinatie met Federated Learning (FL) kan CB verebterd worden. In plaats van
 
 We passen het strtegie van verdeel en heers om dit probleem makkelijker op te lossen. Beschouw het hybride aanbevelingssysteem als een combinatie van twee subsystemen: een Content Based (CB) gebaseerde en Collaborative Filtering (CF) gebaseerde systeem. 
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Ten eerste zal er een uitgebreide literatuurstudie plaatsvinden, waarbij de huidige implementaties van CB en CF systemen worden onderzocht. Daarna gaan we na of er combinaties van deze systemen bestaan met Federated Learning (FL) en Differential Privacy (DP) technieken.
+Vervolgens moeten de datasets verworven worden die tijdens het trainen en evalueren van het systeem worden gebruikt. De MovieLens 10M is een dataset, die meer dan 10 miljoen beoordelingen van meer dan 10.000 films door meer dan 71.000 gebruikers bevat. Deze dataset biedt zowel gebruikersbeoordelingen als informatie over de films zelf \autocite{Mazeh2020}.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+Hierna volgt het prototype opbouwen van zowel het CF systeem met Differential Privacy als het CB systeem met Federated Learning. Deze prototypes zullen afzonderlijk worden getest en geëvalueerd op hun prestaties en privacybescherming. Ten slotte wordt de Weighted Hybrid methode gebruikt om de twee systemen te integreren. Hierbij worden de aanbevelingen van beide systemen gecombineerd door gewichten toe te kennen aan de relatieve invloed van elk systeem, om zo tot een uiteindelijke aanbevelingen te komen.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
-
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
-
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+Tot slot wordt het gecombineerde resultaat geëvalueerd in termen van algemene prestaties en privacyimpact door het te testen op de datasets om de kwaliteit van de aanbevelingen en het niveau van privacybescherming te beoordelen. Hierbij zullen verschillende experimenten worden uitgevoerd om de effectiviteit van de gebruikte technieken (Differential Privacy en Federated Learning) te beoordelen. De resultaten van deze experimenten zullen worden geanalyseerd en vergeleken met bestaande methoden om de voordelen en mogelijke nadelen van het voorgestelde hybride systeem te identificeren. De bevindingen uit deze evaluaties zullen bijdragen aan de verdere optimalisatie en validatie van het proof-of-concept systeem.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+Van het voorgestelde hybride aanbevelingssysteem wordt verwacht dat het nauwkeurige en gepersonaliseerde aanbevelingen kan genereren en tegelijkertijd de privacy van de gebruiker beschermt. Het gebruik van DP in het CF systeem zal naar verwachting een sterke bescherming bieden voor gebruikersgegevens. Tegelijkertijd maakt het gebruik van FL binnen het CB systeem dat modellen lokaal getraind kunnen worden, waardoor de privacy nog beter beschermd wordt.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+Verder wordt verwacht dat het hybride systeem een balans vindt tussen de nauwkeurigheid van aanbevelingen en het mate van privacy bescherming. Dit zal worden geëvalueerd aan de hand van metrieken zoals relevantie en de invloed van privacymaatregelen op de kwaliteit van aanbevelingen.
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
-
+De resultaten van dit onderzoek kunnen bijdragen aan de ontwikkeling van veilige en betrouwbare aanbevelingssystemen die het vertrouwen van de gebruiker vergroten en tegelijkertijd voldoen aan strengere privacy-eisen. Dit proof-of-concept kan een basis vormen voor verdere innovatie in privacybewuste aanbevelingstechnologieën binnen de entertainmentindustrie en daarbuiten.
