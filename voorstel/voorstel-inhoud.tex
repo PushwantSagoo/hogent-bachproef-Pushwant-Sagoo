@@ -15,28 +15,29 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Aanbevelingssystemen zijn systemen die aan de hand van massa's data gepersonaliseerde suggesties doen aan gebruikers \autocite{Mazeh2020}. Ze komen voor in allerlei sectoren en dergelijke systemen kunnen gebruikers een gepersonaliseerde selectie van relevante items bieden. Praktisch gaat het over bijvoorbeeld aanbevelingen om leuke films te vinden of een klant aanzetten om iets te kopen door middel van gerichte advertenties \autocite{Patel2020}. De focus ligt op aanbevelingssystemen binnen de entertainmentsector, specifiek gericht op films, waarbij filmgerelateerde data en gebruikersvoorkeuren worden gebruikt voor de ontwikkeling en evaluatie van het systeem.
 
+Algemeen gaat men ervan uit dat hoe meer data zo'n systeem kan gebruiken, hoe accurate en relevante de aanbevelingen zullen zijn \autocite{Yang2020}. Deze aanbevelingssystemen hanteren een bepaalde aanpak. In \textcite{Amatriain2014} werden de verschillende methoden uitgelicht: de ``traditionele`` methoden zoals Collabrative Filtering en Content-based Recommendations en de ``nieuwe`` methoden die gebruik maken van artificiële intelligentie zoals Neurale netwerken, Deep Learning en meer. Maar om te benutten van het beste van twee werelden bestaat er een hybride manier, die de focus van dit onderzoek zal vormen.
+
+Dit onderzoek zal een antwoord bieden op de vraag hoe een hybride aanbevelingssysteem kan worden ontwikkeld zonder de privacy van gebruikers in gevaar te brengen. Het hoofdonderzoeksvraag kan verder opgedeeld worden in de volgende drie deelproblemen:
 \begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
+  \item Ontwikkelen van een Collaborative Filtering (CF) systeem met behulp van Differential Privacy (DP).
+  \item Ontwikkelen van een Content Based (CB) systeem met behulp van Federated Learning (FL).
+  \item Intragreren van de twee systemen tot een hybride aanbevelingssysteem.
 \end{itemize}
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{../graphics/Hybrid_RS_Land_Voorbeeld.jpg}
+  \caption{Voorbeeld van hoe een hybride aanbevelingssysteem eruit kan zien \autocite{Patel2020}.} 
+  \label{fig:hybrid_rs_land_voorbeeld}
+\end{figure}
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Het doel is een werkend proof-of-concept systeem te bouwen dat accurate en gepersonaliseerde aanbevelingen kan genereren, waarbij het vrijwel geen toegang heeft tot gevoelige gegevens van gebruikers. Door een combinatie van privacy behoudende technologieën, zoals FL en DP, vindt dit systeem een balans tussen bruikbaarheid en privacy. Als dit lukt, kan het een belangrijke stap zijn in de ontwikkeling van veilige en effectieve aanbevelingssystemen die vertrouwen winnen bij de gebruiker.
 
 %---------- Stand van zaken ---------------------------------------------------
 \section{Literatuurstudie}
 \label{sec:literatuurstudie}
-
-Aanbevelingssystemen zijn systemen die aan de hand van massa's data gepersonaliseerde suggesties doen aan gebruikers. Algemeen gaat men ervan uit dat hoe meer data zo'n systeem kan gebruiken, hoe accurate en relevante de aanbevelingen zullen zijn \autocite{Yang2020}. Deze Aanbevelingssystemen kunnen worden onderverdeeld door de aanpak die hanteren om aanbevilngen te genereren. In \textcite{Amatriain2014} werden de verschillende aanpak uitgelicht: de "traditionele" methoden zoals Collabrative Filtering en Content-based Recommendations en de "nieuwe" methoden die gebruik maken van artificiële intelligentie zoals Neurale netwerken, Deep Learning en meer. Maar om te benutten van het beste van twee werelden bestaat er een hybride manier, die de focus van dit onderzoek zal vormen.   
 
 Aanbevelingssystemen zijn de laatste jaren enorm in opkomst en worden toegepast in verschillende sectoren. Ze zijn essentieel voor het bieden van gepersonaliseerde diensten aan gebruikers. Daarnaast vormen zulke diensten een effectieve inkomstenbron voor online bedrijven \autocite{Mazeh2020, Wang2018}. Echter, het gebruik van aanbevelingsdiensten vergt verzamelen van persoonlijke gegevens van gebruikers voor verwerking en analyse, wat gebruikers ongewenst vatbaar maakt voor privacyrisico's. Verder heeft elke serviceprovider een database met informatie over al zijn gebruikers \autocite{Wang2018, Lex2023, Yang2020, Friedman2015}.
 
@@ -59,6 +60,8 @@ In combinatie met Federated Learning (FL) kan CB verebterd worden. In plaats van
 
 \section{Methodologie}%
 \label{sec:methodologie}
+
+We passen het strtegie van verdeel en heers om dit probleem makkelijker op te lossen. Beschouw het hybride aanbevelingssysteem als een combinatie van twee subsystemen: een Content Based (CB) gebaseerde en Collaborative Filtering (CF) gebaseerde systeem. 
 
 Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 
