@@ -17,13 +17,13 @@
 
 Aanbevelingssystemen zijn systemen die aan de hand van massa's data gepersonaliseerde suggesties doen aan gebruikers \autocite{Mazeh2020}. Ze komen voor in allerlei sectoren en dergelijke systemen kunnen gebruikers een gepersonaliseerde selectie van relevante items bieden. Praktisch gaat het over bijvoorbeeld aanbevelingen om leuke films te vinden of een klant aanzetten om iets te kopen door middel van gerichte advertenties \autocite{Patel2020}. De focus ligt op aanbevelingssystemen binnen de entertainmentsector, specifiek gericht op films, waarbij filmgerelateerde data en gebruikersvoorkeuren worden gebruikt voor de ontwikkeling en evaluatie van het systeem.
 
-Algemeen gaat men ervan uit dat hoe meer data zo'n systeem kan gebruiken, hoe accurate en relevante de aanbevelingen zullen zijn \autocite{Yang2020}. Deze aanbevelingssystemen hanteren een bepaalde aanpak. In \textcite{Amatriain2014} werden de verschillende methoden uitgelicht: de ``traditionele`` methoden zoals Collabrative Filtering en Content-based Recommendations en de ``nieuwe`` methoden die gebruik maken van artificiële intelligentie zoals Neurale netwerken, Deep Learning en meer. Maar om te benutten van het beste van twee werelden bestaat er een hybride manier, die de focus van dit onderzoek zal vormen.
+Algemeen gaat men ervan uit dat hoe meer data zo'n systeem kan gebruiken, hoe accurater en relevanter de aanbevelingen zullen zijn \autocite{Yang2020}. Deze aanbevelingssystemen hanteren een bepaalde aanpak. In \textcite{Amatriain2014} werden de verschillende methoden uitgelicht: de ``traditionele`` methoden zoals Collabrative Filtering en Content-based Recommendations en de ``nieuwe`` methoden die gebruik maken van artificiële intelligentie zoals Neurale netwerken, Deep Learning en meer. Maar om te benutten van het beste van twee werelden bestaat er een hybride manier, die de focus van dit onderzoek zal vormen. We trachten een oplossing te vinden op de vraag hoe een privacy behoudende systeem een balans kan vinden tussen bruikbaarheid en privacy. Meer bepaald, hoe dragen Federated Learning (FL) en Differential Privacy (DP) technieken bij garanteren van de privacy van gebruikers in een hybride aanbevelingssysteem.
 
-Dit onderzoek zal een antwoord bieden op de vraag hoe een hybride aanbevelingssysteem kan worden ontwikkeld zonder de privacy van gebruikers in gevaar te brengen. Het hoofdonderzoeksvraag kan verder opgedeeld worden in de volgende drie deelproblemen:
+Dit onderzoek zal een antwoord bieden op de vraag hoe een hybride aanbevelingssysteem kan worden ontwikkeld zonder de privacy van gebruikers in gevaar te brengen. De hoofdonderzoeksvraag kan verder opgedeeld worden in de volgende drie deelproblemen:
 \begin{itemize}
-  \item Ontwikkelen van een Collaborative Filtering (CF) systeem met behulp van Differential Privacy (DP).
-  \item Ontwikkelen van een Content Based (CB) systeem met behulp van Federated Learning (FL).
-  \item Intragreren van de twee systemen tot een hybride aanbevelingssysteem.
+  \item Hoe kan een Collaborative Filtering (CF) systeem ontwikkeld worden met behulp van Differential Privacy (DP)?
+  \item Hoe kan een Content Based (CB) systeem ontwikkeld worden met behulp van Federated Learning (FL)?
+  \item Hoe kunnen de twee systemen geïntegreerd worden tot een hybride aanbevelingssysteem?
 \end{itemize}
 
 \begin{figure}[h!]
@@ -55,7 +55,7 @@ In combinatie met Federated Learning (FL) kan CB verebterd worden. In plaats van
 %   ...'')
 
 %---------- Methodologie ------------------------------------------------------ 
-%// [ ] tijdschatting gantt diagram opstellen, zie RM
+%// [ ] MARK: tijdschatting gantt diagram opstellen
 
 \section{Methodologie}%
 \label{sec:methodologie}
@@ -65,9 +65,9 @@ We passen het strtegie van verdeel en heers om dit probleem makkelijker op te lo
 Ten eerste zal er een uitgebreide literatuurstudie plaatsvinden, waarbij de huidige implementaties van CB en CF systemen worden onderzocht. Daarna gaan we na of er combinaties van deze systemen bestaan met Federated Learning (FL) en Differential Privacy (DP) technieken.
 Vervolgens moeten de datasets verworven worden die tijdens het trainen en evalueren van het systeem worden gebruikt. De MovieLens 10M is een dataset, die meer dan 10 miljoen beoordelingen van meer dan 10.000 films door meer dan 71.000 gebruikers bevat. Deze dataset biedt zowel gebruikersbeoordelingen als informatie over de films zelf \autocite{Mazeh2020}.
 
-Hierna volgt het prototype opbouwen van zowel het CF systeem met Differential Privacy als het CB systeem met Federated Learning. Deze prototypes zullen afzonderlijk worden getest en geëvalueerd op hun prestaties en privacybescherming. Ten slotte wordt de Weighted Hybrid methode gebruikt om de twee systemen te integreren. Hierbij worden de aanbevelingen van beide systemen gecombineerd door gewichten toe te kennen aan de relatieve invloed van elk systeem, om zo tot een uiteindelijke aanbevelingen te komen.
+Hierna volgt het prototype opbouwen van zowel het CF systeem met Differential Privacy als het CB systeem met Federated Learning. Deze prototypes zullen afzonderlijk worden getest en geëvalueerd op hun prestaties en privacybescherming. Voor elk systeem wordt gezocht naar een configuratie die voldoet aan de respectievelijk deelprobleem. Dit omvat het verfijnen van parameters en algoritmes om een oplossing te vinden die een goede balans biedt tussen aanbevelingskwaliteit en privacybescherming. Een oplossing wordt als geschikt beschouwd wanneer de gegenereerde aanbevelingen nauw aansluiten bij de referentievoorbeelden in de dataset. Dit geeft aan dat het systeem zowel relevant als effectief is in zijn aanbevelingen. Ten slotte wordt de Weighted Hybrid methode gebruikt om de twee systemen te integreren. Hierbij worden de aanbevelingen van beide systemen gecombineerd door gewichten toe te kennen aan de relatieve invloed van elk systeem, om zo tot een uiteindelijke aanbevelingen te komen.
 
-Tot slot wordt het gecombineerde resultaat geëvalueerd in termen van algemene prestaties en privacyimpact door het te testen op de datasets om de kwaliteit van de aanbevelingen en het niveau van privacybescherming te beoordelen. Hierbij zullen verschillende experimenten worden uitgevoerd om de effectiviteit van de gebruikte technieken (Differential Privacy en Federated Learning) te beoordelen. De resultaten van deze experimenten zullen worden geanalyseerd en vergeleken met bestaande methoden om de voordelen en mogelijke nadelen van het voorgestelde hybride systeem te identificeren. De bevindingen uit deze evaluaties zullen bijdragen aan de verdere optimalisatie en validatie van het proof-of-concept systeem.
+Tot slot wordt het gecombineerde resultaat geëvalueerd in termen van algemene prestaties en privacyimpact door het te testen op de datasets om de kwaliteit van de aanbevelingen en het niveau van privacybescherming te beoordelen. De resultaten van deze experimenten zullen worden geanalyseerd en vergeleken met bestaande methoden om de voordelen en mogelijke nadelen van het voorgestelde hybride systeem te identificeren. De bevindingen uit deze evaluaties zullen bijdragen aan de verdere optimalisatie en validatie van het proof-of-concept systeem.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
