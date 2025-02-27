@@ -46,16 +46,23 @@
 }
 
 % Other packages not already included can be imported here
+% //TODO MARK: fix the glossaries package
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newacronym{cf}{CF}{Collaborative Filtering}
+\newacronym{fl}{FL}{Federated Learning}
+\newacronym{dp}{DP}{Differential Privacy}
 
 %%---------- Document metadata -------------------------------------------------
 % TODO: Replace this with your own information
 \author{Pushwant Sagoo}
-\supervisor{Dhr. F. Van Houte}
-\cosupervisor{Mevr. S. Beeckman}
-\title[Optionele ondertitel]%
-    {Titel van de bachelorproef}
-\academicyear{\advance\year by 0 \the\year--\advance\year by 1 \the\year}
-\examperiod{1}
+\supervisor{Mevr. Sharon Van Hove}
+\cosupervisor{Dhr. Maurice Cantaert}
+\title%[Optionele ondertitel]%
+    {Ontwikkeling en evaluatie van een privacy behoudend Collaborative Filtering gebaseerd aanbevelingssysteem met behulp van Federated Learning en Differential Privacy} 
+\academicyear{\advance\year by -1 \the\year--\advance\year by 1 \the\year}
+\examperiod{2}
 \degreesought{\IfLanguageName{dutch}{Professionele bachelor in de toegepaste informatica}{Bachelor of applied computer science}}
 \partialthesis{false} %% To display 'in partial fulfilment'
 %\institution{Internshipcompany BVBA.}
@@ -119,6 +126,7 @@
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 % https://www.overleaf.com/learn/latex/Glossaries
+\printglossary[type=\acronymtype, title="Lijst van afkortingen", toctitle="Lijst van afkortingen"]
 
 %---------- Kern ---------------------------------------------------------------
 
@@ -151,11 +159,12 @@
 \chapter{Onderzoeksvoorstel}
 
 Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat vooraf werd beoordeeld door de promotor. Dat voorstel is opgenomen in deze bijlage.
-
+% //TODO MARK: voeg uitleg over verschillen tussen voorstel en bachelorproef toe 
 %% TODO: 
-%\section*{Samenvatting}
+\section*{Samenvatting}
 
 % Kopieer en plak hier de samenvatting (abstract) van je onderzoeksvoorstel.
+Het ontwikkelen van een privacy preserverende hybride aanbevelingssysteem biedt kansen om gepersonaliseerde aanbevelingen te leveren zonder inbreuk te maken op de privacy van gebruikers, wat waardevol is voor allerlei sectoren die met gepersonaliseerde informatie werken. Dit onderzoek richt zich op het ontwikkelen van een hybride systeem dat zowel Content Based (CB) als Collaborative Filtering (CF) technieken combineert, waarbij Federated Learning (FL) en Differential Privacy (DP) methodieken worden ingezet om de anonimiteit van gebruikers te garanderen en tegelijkertijd accurate aanbevelingen te doen. Het CB deel maakt gebruik van FL, waardoor de data van gebruikers op hun eigen toestel blijft en enkel geanonimiseerde updates worden naar een centrale server gestuurd, zodat aanbevelingen op basis van persoonlijke voorkeuren lokaal kunnen worden gegenereerd zonder centrale opslag voor gevoelige informatie. Voor het CF deel, dat gebruikmaakt van grotere geaggregeerde datasets, wordt DP toegepast om de gebruikersgegevens verder te beschermen door ruis toe te voegen aan de data voordat deze wordt verwerkt, zelfs tijdens verwerken van gemeenschappelijke voorkeurspatronen. Het doel is een werkend prototype te ontwikkelen dat nauwkeurige aanbevelingen genereert, waarbij de balans tussen aanbevelingskwaliteit en gegevensbescherming wordt geëvalueerd. Verwacht wordt dat deze aanpak de privacyrisico's van traditionele systemen aanzienlijk verlaagt, terwijl de relevantie en precisie van aanbevelingen behouden blijft. Dit onderzoek draagt bij aan een waardevolle oplossing voor privacyvriendelijke, op maat gemaakte aanbevelingen aan te bieden die voldoen aan de eisen van privacywetgevingen en bovendien die een breed scala aan toepassingen hebben in verschillende sectoren. Daarnaast vergroot deze aanpak het gebruikersvertrouwen en verhoogt de klantwaarde.
 
 % Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
 \input{../voorstel/voorstel-inhoud}
