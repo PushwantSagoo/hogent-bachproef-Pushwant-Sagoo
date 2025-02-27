@@ -46,13 +46,14 @@
 }
 
 % Other packages not already included can be imported here
-% //TODO MARK: fix the glossaries package
-\usepackage[acronym]{glossaries}
-\makeglossaries
+\usepackage[acronym,shortcuts]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
 
 \newacronym{cf}{CF}{Collaborative Filtering}
 \newacronym{fl}{FL}{Federated Learning}
 \newacronym{dp}{DP}{Differential Privacy}
+
+\makenoidxglossaries
 
 %%---------- Document metadata -------------------------------------------------
 % TODO: Replace this with your own information
@@ -126,7 +127,9 @@
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 % https://www.overleaf.com/learn/latex/Glossaries
-\printglossary[type=\acronymtype, title="Lijst van afkortingen", toctitle="Lijst van afkortingen"]
+% \printglossary[type=\acronymtype, title=Lijst van afkortingen, toctitle=Lijst van afkortingen]
+\printnoidxglossary[type=\acronymtype,title=Lijst van afkortingen,toctitle=Lijst van afkortingen,nonumberlist]
+\glsaddall
 
 %---------- Kern ---------------------------------------------------------------
 
