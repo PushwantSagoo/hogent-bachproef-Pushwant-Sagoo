@@ -16,56 +16,69 @@ In het onderzoek \textcite{Agapito2016} wordt DIETOS (DIET Organizer System) ge�
 \subsection{Wat maakt ze nuttig?}
 Tegenwoordig wordt overweldigende data geproduceerd waardoor gebruikers makkelijk overbeslast kunnen worden met informatie en keuzes. Een gebruiker zou zelf door de data moeten filteren om het gewenst item te vinden. Aanbevelingssystemen bieden een oplossing voor dit probleem door data te analyseren en te filteren om nuttige informatie te extraheren \autocite{Fkih2022}. Ze zijn in staat om gebruikersvoorkeuren en gedrag te voorspellen waardoor ze kunnen inspelen op de behoeften van de gebruiker \autocite{Mazeh2020}. Ze verbeteren de besluitvorming van gebruikers door relevante opties voor te stellen, zoals wat te kopen, te lezen of te bekijken, en moedigen hen aan om actie te ondernemen \autocite{Mazeh2020}. Daarnaast spelen aanbevelingssystemen een belangrijke rol in het creëren van bedrijfswaarde, doordat ze bijdragen aan verkoop en omzet door producten aan te bevelen die klanten waarschijnlijk zullen kopen \autocite{Wang2018, Patel2023}. \autocite{MacKenzie2013} toont aan dat 35\% van de aankopen op Amazon en 75\% van wat gebruikers op Netflix bekijken, te danken is aan gepersonaliseerde aanbevelingen. Huidige cijfers zijn waarschijnlijk nog hoger.
 \subsection{Soorten aanbevelingssystemen}
-\begin{figure}
+Er bestaan verschillende typen aanbevelingssystemen waarvan de meest voorkomende zijn:
+\begin{itemize}
+  \item \textbf{Content-based Filtering (CBF)}: Deze methode beveelt items aan die vergelijkbaar zijn met items die een gebruiker in het verleden heeft gewaardeerd of waarmee hij/zij heeft geïnterpreteerd. Het systeem analyseert de eigenschappen of beschrijvingen van items (bijv. genre, trefwoorden of metadata) en matcht deze met het interesseprofiel van de gebruiker \autocite{Patel2023}.
+  \item \textbf{Collaborative Filtering (CF)}: Dit type maakt aanbevelingen op basis van de voorkeuren en het gedrag van andere gebruikers met vergelijkbare smaken. Het identificeert gebruikers met vergelijkbare eerdere interacties (gebruikersgebaseerd) of items die vaak samen worden gewaardeerd (itemsgebaseerd) en beveelt items aan die deze gebruikers leuk vonden \autocite{Patel2023}. Dit kan verder worden onderverdeeld in twee categorieën, gebaseerd op geheugen (memory-based) en model (model-based).
+  \item \textbf{Hybride Filtering (HF)}: Hybride systemen combineren de sterke punten van content-based en collaborative filtering om de beperkingen van beide methoden te overwinnen. Door beide benaderingen te integreren, kunnen ze robuustere, nauwkeurigere en diversere aanbevelingen bieden \autocite{Patel2023}.
+\end{itemize}
+Naast deze hoofdcategorieën bestaan er ook andere soorten aanbevelingssystemen, waaronder:
+\begin{itemize}
+  \item \textbf{Knowledge gebaseerde systemen}: Deze systemen gebruiken expliciete kennis over gebruikers en items om te bepalen welke items aan de behoeften van een gebruiker voldoen \autocite{Patel2023}.
+  \item \textbf{Demographic gebaseerde systemen}: Ze geven aanbevelingen op basis van de demografische profielen van gebruikers \autocite{Patel2023}.
+  \item \textbf{Sequential aanbevelingssystemen}: Deze houden rekening met de volgorde van eerdere interacties van een gebruiker om te voorspellen waar hij/zij mogelijk in geïnteresseerd is \autocite{Patel2023, Zangerle2022}.
+  \item \textbf{Session gebaseerde systemen}: Deze aanbevelingssystemen gebruiken algoritmen om gebruikers aanbevelingen te geven op basis van hun meest recente interacties tijdens de huidige sessie. Deze interacties kunnen verschillende vormen aannemen, zoals de browsegeschiedenis, klikgedrag, toegangstijd en andere acties die de gebruiker tijdens de sessie uitvoert. Een belangrijke verschil met traditionele aanbevelingssystemen is dat ze doorgaans geen rekening met de voorkeuren of gedragingen van gebruikers buiten de huidige sessie \autocite{Patel2023}. 
+  \item \textbf{Context gebaseerde systemen}: Deze houden rekening met verschillende contextuele factoren, zoals tijd, locatie of de huidige situatie van de gebruiker, om relevantere aanbevelingen te bieden \autocite{Patel2023}.
+  \item \textbf{Trustworthy Recommender Systems (TRSs)}: Een recente ontwikkeling die zich richt op aspecten zoals eerlijkheid, verklaarbaarheid, privacy en robuustheid bij het genereren van aanbevelingen \autocite{Wang2024}.
+\end{itemize}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\textwidth]{taxonomie-rs-patel2023.jpg}
   \caption[Taxonomie van aanbevelingssystemen]{\label{fig:TaxonomieRS} Taxonomie van aanbevelingssystemen \autocite{Patel2023}}
 \end{figure}
-
+\subsection{Uitdagingen en ethische overwegingen van aanbevelingssystemen}
+Aanbevelingssystemen bieden veel voordelen maar brengen ook enkele uitdagingen en ethische dilemma's met zich mee. Een van de meest urgente zorgen is privacy \autocite{Lex2023, Friedman2015, Li2017}. Het verzamelen en verwerken van gebruikersgegevens, die cruciaal zijn voor het genereren van effectieve aanbevelingen, kan resulteren in privacyschendingen en het onbedoeld blootleggen van gevoelige persoonlijke gegevens \autocite{Wang2018, Li2017}.
+Een ander probleem is de zogenaamde filterbubbel, waarbij gebruikers alleen worden blootgesteld aan informatie die hun bestaande overtuigingen en vooroordelen bevestigt. Hierdoor komen ze in een echo-kamer terecht, waar ze geen toegang hebben tot diverse perspectieven en meningen. ndere ethische uitdagingen zijn onder meer het aanbevelen van ongepaste of twijfelachtige content, oneerlijkheid in aanbevelingen, en een gebrek aan transparantie over hoe aanbevelingen tot stand komen (ook wel "opaciteit" genoemd) \autocite{Milano2020}. Deze problemen kunnen de autonomie en identiteit van gebruikers ondermijnen en bestaande vooroordelen verder versterken.
+Het cold-start probleem is een ander veelvoorkomend probleem bij aanbevelingssystemen, waarbij het systeem moeite heeft om aanbevelingen te doen voor nieuwe gebruikers of items die weinig interacties hebben gehad \autocite{Roy2022, Patel2023}. Datasparsheid komt daar in ook bij kijken doordat gebruikers-item interacties vaak beperkt zijn wordt het systeem opbouwen of trainen moeilijker \autocite{Roy2022, Patel2023}.
+Gerelateerd aan trainen is het probleem van bias in de trainingsdata. Dit leidt tot ongelijke behandeling van gebruikers en items, wat kan resulteren in discriminerende aanbevelingen en het kan vooroordelen versterken. Eerlijkheid is een ander belangrijk aandachtspunt, zowel voor gebruikers (bijvoorbeeld door discriminatie te voorkomen) als voor items bijvoorbeeld door gelijke zichtbaarheid te bieden aan zowel populaire als minder populaire items \autocite{Wang2024}.
+Een van de grootste technische uitdagingen is ervoor zorgen dat het systeem efficiënt en schaalbaar blijft. Naarmate het aantal gebruikers en producten toeneemt, moet het systeem snel en nauwkeurig blijven werken, wat veel rekenkracht vraagt \autocite{Roy2022, Patel2017}.
+Daarom is voortdurend onderzoek en innovatie nodig om aanbevelingssystemen niet alleen effectief te houden, maar ook eerlijk, betrouwbaar en gebruiksvriendelijk te maken. 
 \section{\ac{cf} gebaseerde aanbevelingssystemen}
 \section{Toepassing \ac{fl} techniek}
 \section{\ac{dp} framework}
 \section{Evalueren van aanbevelingssystemen}
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{grail.jpg}
+%   \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
+% \end{figure}
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+% \begin{listing}
+%   \begin{minted}{python}
+%     import pandas as pd
+%     import seaborn as sns
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
-
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{grail.jpg}
-  \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
-\end{figure}
-
-\begin{listing}
-  \begin{minted}{python}
-    import pandas as pd
-    import seaborn as sns
-
-    penguins = sns.load_dataset('penguins')
-    sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
-  \end{minted}
-  \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
-\end{listing}
+%     penguins = sns.load_dataset('penguins')
+%     sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
+%   \end{minted}
+%   \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
+% \end{listing}
 
 \lipsum[7-20]
 
-\begin{table}
-  \centering
-  \begin{tabular}{lcr}
-    \toprule
-    \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
-    $\alpha$         & $\beta$          & $\gamma$         \\
-    \midrule
-    A                & 10.230           & a                \\
-    B                & 45.678           & b                \\
-    C                & 99.987           & c                \\
-    \bottomrule
-  \end{tabular}
-  \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
-\end{table}
+% \begin{table}
+%   \centering
+%   \begin{tabular}{lcr}
+%     \toprule
+%     \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
+%     $\alpha$         & $\beta$          & $\gamma$         \\
+%     \midrule
+%     A                & 10.230           & a                \\
+%     B                & 45.678           & b                \\
+%     C                & 99.987           & c                \\
+%     \bottomrule
+%   \end{tabular}
+%   \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
+% \end{table}
 
