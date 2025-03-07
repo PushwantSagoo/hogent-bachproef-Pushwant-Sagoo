@@ -5,32 +5,62 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+% De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+% \begin{itemize}
+%   \item context, achtergrond
+%   \item afbakenen van het onderwerp
+%   \item verantwoording van het onderwerp, methodologie
+%   \item probleemstelling
+%   \item onderzoeksdoelstelling
+%   \item onderzoeksvraag
+%   \item \ldots
+% \end{itemize}
+
+Aanbevelingssystemen zijn geavanceerde tools die gebruikmaken van grote hoeveelheden data om gepersonaliseerde suggesties te doen aan gebruikers. Deze systemen spelen een cruciale rol in diverse sectoren, zoals e-commerce, streamingdiensten, sociale media en entertainment. Ze helpen gebruikers bij het ontdekken van relevante producten, diensten of content, zoals het aanraden van films op een streamingplatform of het tonen van gerichte advertenties om klanten te verleiden tot aankopen. Door gebruik te maken van gebruikersgedrag, voorkeuren en interactiepatronen, kunnen deze systemen een gepersonaliseerde ervaring bieden die zowel de gebruikers tevreden stelt als de bedrijfsdoelen ondersteunt.
+
+Dit onderzoek richt zich specifiek op aanbevelingssystemen binnen de entertainmentsector, met een focus op films. Hierbij worden filmgerelateerde data en gebruikersvoorkeuren gebruikt voor de ontwikkeling en evaluatie van het systeem. Het doel is om een systeem te creëren dat niet alleen nauwkeurige en relevante aanbevelingen doet, maar ook de privacy van gebruikers respecteert en beschermt.
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+% Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+
+Een veelgehoorde aanname in de wereld van aanbevelingssystemen is dat hoe meer data een systeem kan verwerken, hoe nauwkeuriger en relevanter de aanbevelingen worden. Traditionele aanbevelingssystemen maken vaak gebruik van methoden zoals Collaborative Filtering (CF) en Content-Based Recommendations (CB). CF richt zich op het identificeren van patronen in gebruikersgedrag, terwijl CB aanbevelingen doet op basis van de eigenschappen van items, zoals genre of beschrijvingen. Daarnaast zijn er moderne methoden die gebruikmaken van geavanceerde technieken zoals neurale netwerken en deep learning.
+
+Echter, deze systemen zijn vaak afhankelijk van gecentraliseerde datasets, wat ernstige privacyrisico's met zich meebrengt. Gebruikersdata wordt meestal opgeslagen en verwerkt op centrale servers, wat het risico op datalekken en misbruik vergroot. Bovendien kunnen gebruikers zich zorgen maken over hoe hun persoonlijke gegevens worden gebruikt, wat het vertrouwen in dergelijke systemen kan ondermijnen. 
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+% Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+
+Dit roept de vraag op: \textit{Hoe kunnen we een aanbevelingssysteem ontwikkelen dat nauwkeurige en gepersonaliseerde aanbevelingen doet zonder de privacy van gebruikers in gevaar te brengen?}
+
+Deze hoofdvraag kan worden opgesplitst in de volgende deelvragen:
+\begin{itemize}
+  \item \textbf{Hoe kan Federated Learning worden toegepast om een Collaborative Filtering-systeem te ontwikkelen waarbij gebruikersdata lokaal blijft?}
+  Federated Learning maakt het mogelijk om machine learning-modellen te trainen zonder dat gebruikersdata wordt gedeeld of opgeslagen op een centrale server. In plaats daarvan wordt het model getraind op het apparaat van de gebruiker, en alleen geaggregeerde updates worden naar een globaal model gestuurd. Dit minimaliseert het risico op datalekken en beschermt de privacy van gebruikers.
+  \item \textbf{Hoe kan Differential Privacy worden geïntegreerd om berekende ruis toe te voegen aan de parameters die naar het globale model worden gestuurd?}
+  Differential Privacy voegt gecontroleerde ruis toe aan de data of modelparameters voordat deze worden gedeeld. Dit zorgt ervoor dat individuele gebruikers niet kunnen worden geïdentificeerd, zelfs niet wanneer de data wordt geanalyseerd.
+  \item \textbf{Wat is de balans tussen de nauwkeurigheid van aanbevelingen en het niveau van gegevensbescherming?}
+  Het toevoegen van ruis kan de nauwkeurigheid van het model beïnvloeden. Daarom is het belangrijk om een optimale balans te vinden tussen het beschermen van privacy en het behouden van de kwaliteit van de aanbevelingen.
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+% Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+
+Het doel van dit onderzoek is het ontwikkelen van een werkend prototype van een privacy-preserverend Collaborative Filtering-systeem dat gebruikmaakt van Federated Learning (FL) en Differential Privacy (DP). Volgende aspecten zijn van belang:
+\begin{itemize}
+  \item \textit{Ontwikkeling van een CF-systeem met Federated Learning}
+  Het systeem moet gebruikersdata lokaal verwerken en alleen geanonimiseerde updates naar een globaal model sturen. Dit vermindert het risico op datalekken en zorgt ervoor dat gevoelige informatie nooit centraal wordt opgeslagen.
+  \item \textit{Integratie van Differential Privacy}
+  Door berekende ruis toe te voegen aan de parameters die naar het globale model worden gestuurd, wordt de privacy van individuele gebruikers beschermd.
+  \item \textit{Evaluatie van de balans tussen nauwkeurigheid en privacy}
+  Het systeem moet worden getest en geëvalueerd om de optimale balans te vinden tussen de kwaliteit van de aanbevelingen en het niveau van gegevensbescherming.
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
